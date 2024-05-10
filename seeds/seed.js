@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User } = require('../models/index.js');
+const User = require('../models/User.js');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
