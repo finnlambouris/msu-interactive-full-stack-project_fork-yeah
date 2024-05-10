@@ -4,13 +4,12 @@ const router = express.Router();
 
 const apiRoutes = require('./api');
 
-
 const signupRoutes = require('./signupRoutes.js');
 const loginRoutes = require('./loginRoutes.js');
 const logoutRoutes = require('./logoutRoutes.js');
 
-const indexController = require('./controllers/index.js');
-const indexRouter = require('./controllers/index.js');
+// const indexController = require('./controllers/index.js');
+// const indexRouter = require('./controllers/index.js');
 
 // Define your routes here
 router.use('/api', apiRoutes);
@@ -21,8 +20,6 @@ router.use('/logout', logoutRoutes);
 router.get('/', (req, res) => {
   res.send('Hello World');
 });
-
-module.exports = router;
 
   // Create a new post 
     // req.body contains the post data
@@ -53,3 +50,4 @@ router.delete('/posts/:id', (req, res) => {
     res.send('Post deleted successfully');
 });
 
+module.exports = router;
