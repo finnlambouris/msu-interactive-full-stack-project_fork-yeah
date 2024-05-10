@@ -1,6 +1,6 @@
 // server.js
 const express = require('express');
-const routes = require('./controllers');
+const routes = require('./controllers'); // No need for .js extension
 const app = express();
 const PORT = process.env.PORT || 3001;
 
