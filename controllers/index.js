@@ -8,6 +8,8 @@ const signupRoutes = require('./signupRoutes.js');
 const loginRoutes = require('./loginRoutes.js');
 const logoutRoutes = require('./logoutRoutes.js');
 
+const {upload} = require('../storage/storage.js');
+
 // const indexController = require('./controllers/index.js');
 // const indexRouter = require('./controllers/index.js');
 
@@ -16,6 +18,23 @@ router.use('/api', apiRoutes);
 router.use('/signup', signupRoutes);
 router.use('/login', loginRoutes);
 router.use('/logout', logoutRoutes);
+
+router.get('/', (req, res) => {
+    return res.render("homepage");
+});
+
+const {upload} = require('../storage/storage.js');
+const { User, Recipe } = require('../models/index.js');
+router.post('/recipe', upload.single('recipePhoto'), async (req, res) => {
+    const newRecipe = await Recipe.create({
+        name: req.body.recipeName,
+        ingredients: req.body.recipeIngredients,
+        instructions: req.body.recipeInstructions,
+        photo: req.file.path,
+    });
+    console.log(newRecipe);
+    return res.status(200).json(newRecipe);
+});
 
   // Create a new post 
     // req.body contains the post data

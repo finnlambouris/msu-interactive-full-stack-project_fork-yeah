@@ -19,6 +19,9 @@ const handlebars = expressHandlebars.create({});
 app.engine("handlebars", handlebars.engine);
 app.set("view engine", "handlebars");
 
+// storage for photo uploads
+const { storage } = require('./storage/storage');
+
 // sequelize session
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
