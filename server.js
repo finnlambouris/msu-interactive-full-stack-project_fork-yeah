@@ -19,6 +19,11 @@ const handlebars = expressHandlebars.create({});
 app.engine("handlebars", handlebars.engine);
 app.set("view engine", "handlebars");
 
+// storage for photo uploads
+const { storage } = require('./storage/storage');
+const multer = require('multer');
+const upload = multer({ storage });
+
 // sequelize session
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -36,6 +41,13 @@ app.use(session({
             db: sequelize
         })
 }));
+
+
+// testing  
+app.post('/upload', upload.single('image'), (req, res) => {
+  console.log(req.file.path);
+  res.send('Done');
+});
 
 // Use routes
 const routes = require('./controllers/index.js');

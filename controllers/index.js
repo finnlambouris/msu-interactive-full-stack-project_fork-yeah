@@ -18,7 +18,7 @@ router.use('/login', loginRoutes);
 router.use('/logout', logoutRoutes);
 
 router.get('/', (req, res) => {
-  res.send('Hello World');
+    return res.render("homepage");
 });
 
   // Create a new post 
