@@ -8,8 +8,6 @@ const signupRoutes = require('./signupRoutes.js');
 const loginRoutes = require('./loginRoutes.js');
 const logoutRoutes = require('./logoutRoutes.js');
 
-const {upload} = require('../storage/storage.js');
-
 // const indexController = require('./controllers/index.js');
 // const indexRouter = require('./controllers/index.js');
 
