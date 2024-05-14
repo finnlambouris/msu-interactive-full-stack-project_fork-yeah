@@ -8,6 +8,8 @@ const signupRoutes = require('./signupRoutes.js');
 const loginRoutes = require('./loginRoutes.js');
 const logoutRoutes = require('./logoutRoutes.js');
 
+const {upload} = require('../storage/storage.js');
+
 // const indexController = require('./controllers/index.js');
 // const indexRouter = require('./controllers/index.js');
 
@@ -24,10 +26,6 @@ router.get('/', (req, res) => {
 const {upload} = require('../storage/storage.js');
 const { User, Recipe } = require('../models/index.js');
 router.post('/recipe', upload.single('recipePhoto'), async (req, res) => {
-    // console.log(req.file);
-    console.log(req.file.fieldname);
-    console.log(req.file.path);
-    console.log(req.file.filename);
     const newRecipe = await Recipe.create({
         name: req.body.recipeName,
         ingredients: req.body.recipeIngredients,
