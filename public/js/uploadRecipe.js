@@ -4,14 +4,14 @@ async function upload(event) {
     const recipeName = document.querySelector('#recipe-name').value;
     const recipeIngredients = document.querySelector('#recipe-ingredients').value;
     const recipeInstructions = document.querySelector('#recipe-instructions').value;
-    const recipeImage = document.querySelector('#recipe-photo')
+    const recipePhoto = document.querySelector('#recipe-photo');
 
     const formData = new FormData();
-    formData.append('image', recipeImage.files[0]);
+    formData.append('recipePhoto', recipePhoto.files[0]);
     formData.append('recipeName', recipeName);
     formData.append('recipeIngredients', recipeIngredients);
     formData.append('recipeInstructions', recipeInstructions);
-
+ 
     const response = await fetch(`/recipe`, {
       method: 'POST',
       body: formData
@@ -24,5 +24,5 @@ async function upload(event) {
     // }
   }
 
-const recipeForm = document.querySelector('#recipe-form')
+const recipeForm = document.querySelector('#recipe-form');
 recipeForm.addEventListener('submit', upload);

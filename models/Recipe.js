@@ -17,18 +17,12 @@ Recipe.init(
     },
     ingredients: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     instructions: {
       type: DataTypes.STRING,
-      allowNull: true,
     },
-    photo_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "photos",
-        key: "id",
-      },
+    photo: {
+      type: DataTypes.STRING,
     },
     user_id: {
       type: DataTypes.INTEGER,

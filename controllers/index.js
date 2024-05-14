@@ -23,14 +23,14 @@ router.get('/', (req, res) => {
     return res.render("homepage");
 });
 
-const { User, Recipe, Photo } = require('../models/index.js');
-router.post('/recipe', upload.single('image'), async (req, res) => {
-    
-    console.log('file for recipe', req.file);
+const {upload} = require('../storage/storage.js');
+const { User, Recipe } = require('../models/index.js');
+router.post('/recipe', upload.single('recipePhoto'), async (req, res) => {
     const newRecipe = await Recipe.create({
         name: req.body.recipeName,
         ingredients: req.body.recipeIngredients,
         instructions: req.body.recipeInstructions,
+        photo: req.file.path,
     });
     console.log(newRecipe);
     return res.status(200).json(newRecipe);

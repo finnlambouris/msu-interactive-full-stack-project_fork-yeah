@@ -17,8 +17,8 @@ console.log({
 const storage = new CloudinaryStorage({
     cloudinary,
     params: {
-        folder: 'CloudinaryDemo',
-        allowedFormats: ['jpeg', 'png', 'jpg'],
+        folder: 'forkYeah',
+        allowedFormats: ['jpeg', 'png', 'jpg', 'webp'],
     }
 });
 

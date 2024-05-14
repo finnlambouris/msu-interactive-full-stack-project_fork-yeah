@@ -22,7 +22,6 @@ app.set("view engine", "handlebars");
 // storage for photo uploads
 const { storage } = require('./storage/storage');
 
-
 // sequelize session
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -40,21 +39,6 @@ app.use(session({
             db: sequelize
         })
 }));
-
-
-// testing  
-// const { User, Recipe, Photo } = require('./models/index.js');
-// app.post('/upload', upload.single('image'), async (req, res) => {
-//     // const photoUrl = req.file.path;
-//     // console.log(photoUrl);
-//     // res.send('Done');
-
-//     const newPhoto = await Photo.create({
-//         url: req.file.path,
-//       });
-//       console.log(newPhoto);
-//       return res.status(200).json(newPhoto);
-// });
 
 // Use routes
 const routes = require('./controllers/index.js');
