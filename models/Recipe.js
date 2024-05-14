@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt');
 
 class Recipe extends Model {}
 
@@ -24,9 +23,19 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    photo: {
-      type: DataTypes.STRING,
-      allowNull: true,
+    photo_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "photos",
+        key: "id",
+      },
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "users",
+        key: "id",
+      },
     }
   },
   {
@@ -35,19 +44,7 @@ Recipe.init(
     underscored: true,
     createdAt: false,
     updatedAt: false,
-    modelName: 'users',
-    hooks: {
-      beforeCreate: async (user) => {
-        user.password = await bcrypt.hash(user.password, 10);
-        return user;
-      },
-      beforeUpdate: async (user) => {
-        if (user.password) {
-          user.password = await bcrypt.hash(user.password, 10);
-        }
-        return user;
-      },
-    },
+    modelName: 'recipes',
   }
 );
 

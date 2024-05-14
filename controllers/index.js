@@ -21,6 +21,18 @@ router.get('/', (req, res) => {
     return res.render("homepage");
 });
 
+const { User, Recipe, Photo } = require('../models/index.js');
+router.post('/recipe', async (req, res) => {
+    const newRecipe = await Recipe.create({
+        name: req.body.name,
+        ingredients: req.body.ingredients,
+        instructions: req.body.instructions,
+
+      });
+      console.log(newRecipe);
+      return res.status(200).json(newRecipe);
+});
+
   // Create a new post 
     // req.body contains the post data
     // Save the post to the database

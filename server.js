@@ -44,9 +44,17 @@ app.use(session({
 
 
 // testing  
-app.post('/upload', upload.single('image'), (req, res) => {
-  console.log(req.file.path);
-  res.send('Done');
+const { User, Recipe, Photo } = require('./models/index.js');
+app.post('/upload', upload.single('image'), async (req, res) => {
+    // const photoUrl = req.file.path;
+    // console.log(photoUrl);
+    // res.send('Done');
+
+    const newPhoto = await Photo.create({
+        url: req.file.path,
+      });
+      console.log(newPhoto);
+      return res.status(200).json(newPhoto);
 });
 
 // Use routes
