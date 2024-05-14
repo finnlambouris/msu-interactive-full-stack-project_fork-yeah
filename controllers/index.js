@@ -17,10 +17,6 @@ router.use('/signup', signupRoutes);
 router.use('/login', loginRoutes);
 router.use('/logout', logoutRoutes);
 
-router.get('/', (req, res) => {
-  res.send('Hello World');
-});
-
   // Create a new post 
     // req.body contains the post data
     // Save the post to the database
