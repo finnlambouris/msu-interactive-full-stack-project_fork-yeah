@@ -8,6 +8,8 @@ const signupRoutes = require('./signupRoutes.js');
 const loginRoutes = require('./loginRoutes.js');
 const logoutRoutes = require('./logoutRoutes.js');
 
+const {upload} = require('../storage/storage.js');
+
 // const indexController = require('./controllers/index.js');
 // const indexRouter = require('./controllers/index.js');
 
@@ -22,15 +24,16 @@ router.get('/', (req, res) => {
 });
 
 const { User, Recipe, Photo } = require('../models/index.js');
-router.post('/recipe', async (req, res) => {
+router.post('/recipe', upload.single('image'), async (req, res) => {
+    
+    console.log('file for recipe', req.file);
     const newRecipe = await Recipe.create({
-        name: req.body.name,
-        ingredients: req.body.ingredients,
-        instructions: req.body.instructions,
-
-      });
-      console.log(newRecipe);
-      return res.status(200).json(newRecipe);
+        name: req.body.recipeName,
+        ingredients: req.body.recipeIngredients,
+        instructions: req.body.recipeInstructions,
+    });
+    console.log(newRecipe);
+    return res.status(200).json(newRecipe);
 });
 
   // Create a new post 
