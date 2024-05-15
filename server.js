@@ -41,9 +41,10 @@ app.use(session({
 const routes = require('./controllers/index.js');
 app.use(routes);
 
-app.get('/', function (req, res) {
-    res.render('login');
+app.get("/", (req, res) => {
+    res.render("login")
 });
+
 
 sequelize.sync().then(() => {
     app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT}!`));
