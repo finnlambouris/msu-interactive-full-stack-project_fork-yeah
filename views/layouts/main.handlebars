@@ -1,1 +1,32 @@
-{{{ body }}}
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src='handlebarsApp.js'></script>
+  </head>
+  <body>
+    <h1>Fork Feed</h1>
+    <form id="recipe-form">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title">
+      <br>
+      <label for="ingredients">Ingredients:</label>
+      <textarea id="ingredients" name="ingredients"></textarea>
+      <br>
+      <label for="instructions">Instructions:</label>
+      <textarea id="instructions" name="instructions"></textarea>
+      <br>
+      <button type="submit">Submit Recipe</button>
+    </form>
+    {{{ body }}}
+    <div id="recipe-feed">
+      {{#each recipes}}
+        <div class="recipe">
+          <h2>{{title}}</h2>
+          <p>Ingredients: {{ingredients}}</p>
+          <p>Instructions: {{instructions}}</p>
+        </div>
+      {{/each}}
+    </div>
+  </body>
+</html>
+
