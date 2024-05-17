@@ -15,7 +15,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // handlebars functionality
 const expressHandlebars = require("express-handlebars");
-const handlebars = expressHandlebars.create({});
+const helpers = require('./utils/handlebarsHelpers.js');
+const handlebars = expressHandlebars.create({ helpers: helpers });
 app.engine("handlebars", handlebars.engine);
 app.set("view engine", "handlebars");
 
