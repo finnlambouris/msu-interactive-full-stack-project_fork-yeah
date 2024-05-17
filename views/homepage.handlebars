@@ -12,3 +12,24 @@
 </form>
 
 <script src="/js/uploadRecipe.js"></script>
+
+{{#each recipes as |recipe|}}
+    <a href="/recipe/{{id}}">
+        <h2>{{name}}</h2>
+        <img src="{{photo}}" alt="a photo of {{name}}">
+        <h3>Ingredients:</h3>
+        <ul>
+            {{#each (makeList ingredients) as |ingredient| }}
+            <li>{{ingredient}}</li>
+            {{/each}}
+        </ul>
+        <h3>Instructions</h3>
+        <ol>
+            {{#each (makeList instructions) as |instruction| }}
+            <li>{{instruction}}</li>
+            {{/each}}
+        </ol>
+        <p>Recipe by {{user.username}}</p>
+    </a>
+</div>
+{{/each}}

@@ -12,17 +12,17 @@ Recipe.init(
       autoIncrement: true,
     },
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(100),
       allowNull: false,
     },
     ingredients: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(500),
     },
     instructions: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(1000),
     },
     photo: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(100),
     },
     user_id: {
       type: DataTypes.INTEGER,
