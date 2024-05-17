@@ -1,1 +1,24 @@
-{{{ body }}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fork Yeah</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Fork Yeah</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/profile">Profile</a>
+            {{#if logged_in}}
+            <a href="/logout">Log out</a>
+            {{else}}
+            <a href="/login">Log in</a>
+            {{/if}}
+        </nav>
+    </header>
+    {{{ body }}}
+</body>
+</html>
