@@ -1,0 +1,210 @@
+/* root variables */
+:root {
+    --lt-gr: #41d855;;
+    --drk-gr: #319B68;
+    --lt-or: #FF7F29;
+    --drk-or: #E35204;
+    --wht: #ffffff;
+    --blk: #000000;
+}
+
+/* fonts */
+.space-mono-regular {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.space-mono-bold {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+  
+.space-mono-regular-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+}
+  
+.space-mono-bold-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.monoton-regular {
+    font-family: "Monoton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* document */
+header {
+    background-color: var(--lt-gr);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 150px;
+}
+
+h1 {
+    font-family: "Monoton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: 2.5rem;
+    display: inline ;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--lt-or);
+    border: 0.125em solid var(--lt-or);
+    padding: 0.2em .5em;
+    border-radius: 0.25em;
+    text-shadow: 0 0 0.125em hsla(0, 0%, 0%, 0.853), 0 0 .5em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--lt-or), 0 0 0.5em 0 var(--lt-or);
+    position: relative;
+    top: 50px;
+    left: 20px;
+    transition: color 100ms linear;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    text-decoration: none;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--lt-or);
+    font-size: 2rem;
+    margin: 30px;
+}
+
+body {
+    margin-top: 200px;
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    background-color: var(--blk);
+}
+
+.recipe {
+    background-color: var(--drk-gr);
+    width: 80vw;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.recipe a {
+    text-decoration: none;
+    color: var(--blk);
+}
+
+.recipe h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 5px;
+}
+
+.recipe img {
+    width: 80vw;
+}
+
+@media screen and (max-width: 880px) {
+    header {
+        height: 315px;
+    }
+    h1 {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        width: 80%;
+        left: 0;
+    }
+    nav {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 60px;
+        /* justify-content: flex-end; */
+    }
+    nav a {
+        margin: 0px;
+        padding: 10px;
+        border-bottom: 5px solid var(--lt-or);
+    }
+    body {
+        margin-top: 350px;
+    }
+}
+
+.forms {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.form {
+    Flex-grow: 1;
+    Flex-shrink: 1;
+    Flex-basis: 40%;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: var(--wht);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form h2,
+.form label,
+.form input,
+.form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.form h2 {
+    font-size: 1.5rem;
+    color: var(--drk-gr);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form label {
+    font-weight: bold;
+    color: var(--drk-gr);
+}
+
+.form input[type="text"],
+.form input[type="password"] {
+  padding: 0.7rem;
+  border: 1px solid var(--lt-gr);
+  border-radius: 3px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form button {
+    padding: 1rem;
+    background-color: var(--lt-gr);
+    color: var(--wht);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.form button:hover {
+    background-color: var(--drk-gr);
+}
