@@ -1,7 +1,5 @@
-{{> upload-recipe-button}}
-
 <div class="recipes">
-    <a href="/recipe/{{recipe.id}}" class="recipe">
+    <div class="recipe">
         <h2>{{recipe.name}}</h2>
         <img src="{{recipe.photo}}" alt="a photo of {{recipe.name}}">
         <h3>Ingredients:</h3>
@@ -17,5 +15,12 @@
             {{/each}}
         </ol>
         <p>Recipe by {{recipe.user.username}}</p>
-    </a>
+    </div>
 </div>
+
+{{!-- if the user created this recipe, they can delete it --}}
+{{#if (equals user_id recipe.user.id)}}
+    <p id="recipe-id" class="hidden">{{recipe.id}}</p>
+    <a id="delete-recipe-button" href="/recipe/{{recipe.id}}/delete"><button>Delete recipe</button></a>
+    <script src="/js/deleteRecipe.js"></script>
+{{/if}}
