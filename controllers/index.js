@@ -21,8 +21,28 @@ router.get('/', async (req, res) => {
     });
     const recipes = allRecipes.map((recipe) => recipe.get({ plain: true }));
 
-    return res.render("homepage", { recipes: recipes });
+    return res.render("homepage", { 
+        logged_in: req.session.logged_in,
+        recipes: recipes 
+    });
 });
+
+router.get("/profile", async (req, res) => {  
+    if(req.session.logged_in) {
+      const userRecipes = await Recipe.findAll({ 
+        where: { user_id: req.session.user_id }, include: [{ model: User }], 
+      });
+      const recipes = userRecipes.map((post) => post.get({ plain: true }));
+  
+      res.render("profile", {
+        logged_in: req.session.logged_in,
+        recipes: recipes,
+      });
+      
+    } else {
+      res.redirect('/login');
+    }
+  });
 
 const {upload} = require('../storage/storage.js');
 router.post('/recipe', upload.single('recipePhoto'), async (req, res) => {
