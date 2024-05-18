@@ -52,7 +52,6 @@ router.post('/recipe', upload.single('recipePhoto'), async (req, res) => {
         instructions: req.body.recipeInstructions,
         photo: req.file.path,
     });
-    console.log(newRecipe);
     return res.status(200).json(newRecipe);
 });
 
