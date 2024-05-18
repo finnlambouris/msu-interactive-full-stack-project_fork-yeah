@@ -51,6 +51,7 @@ router.post('/recipe', upload.single('recipePhoto'), async (req, res) => {
         ingredients: req.body.recipeIngredients,
         instructions: req.body.recipeInstructions,
         photo: req.file.path,
+        user_id: req.session.user_id
     });
     return res.status(200).json(newRecipe);
 });

@@ -97,18 +97,23 @@ body {
     background-color: var(--blk);
 }
 
-.recipe {
-    background-color: var(--drk-gr);
-    width: 80vw;
-    margin: 0 auto;
-    padding: 20px;
-    margin-bottom: 20px;
+/* recipes */
+.recipes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     text-decoration: none;
 }
 
-.recipe a {
+.recipes a {
     text-decoration: none;
     color: var(--blk);
+    Flex-grow: 1;
+    Flex-shrink: 1;
+    Flex-basis: 30%;
+    margin: 1rem;
+    padding: 2rem;
+    background-color: var(--drk-gr);
 }
 
 .recipe h2 {
@@ -118,36 +123,10 @@ body {
 }
 
 .recipe img {
-    width: 80vw;
+    width: 100%;
 }
 
-@media screen and (max-width: 880px) {
-    header {
-        height: 315px;
-    }
-    h1 {
-        margin: 0 auto;
-        display: block;
-        text-align: center;
-        width: 80%;
-        left: 0;
-    }
-    nav {
-        flex-direction: column;
-        text-align: center;
-        margin-top: 60px;
-        /* justify-content: flex-end; */
-    }
-    nav a {
-        margin: 0px;
-        padding: 10px;
-        border-bottom: 5px solid var(--lt-or);
-    }
-    body {
-        margin-top: 350px;
-    }
-}
-
+/* login/signup forms */
 .forms {
     display: flex;
     flex-direction: row;
@@ -195,6 +174,18 @@ body {
   box-sizing: border-box;
 }
 
+#recipe-ingredients,
+#recipe-instructions {
+    margin-bottom: 5px;
+}
+
+.form p {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--dk-gr);
+    margin-top: 0;
+}
+
 .form button {
     padding: 1rem;
     background-color: var(--lt-gr);
@@ -207,4 +198,34 @@ body {
 
 .form button:hover {
     background-color: var(--drk-gr);
+}
+
+/* @media queries for mobile viewing */
+@media screen and (max-width: 880px) {
+    header {
+        height: 315px;
+    }
+    h1 {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        width: 80%;
+        left: 0;
+    }
+    nav {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 60px;
+    }
+    nav a {
+        margin: 0px;
+        padding: 10px;
+        border-bottom: 5px solid var(--lt-or);
+    }
+    body {
+        margin-top: 350px;
+    }
+    .recipes {
+        flex-direction: column;
+    }
 }

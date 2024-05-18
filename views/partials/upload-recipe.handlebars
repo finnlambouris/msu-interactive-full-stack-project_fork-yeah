@@ -1,0 +1,16 @@
+<form class="form" id="recipe-form">
+    <h2>Upload your recipe here!</h2>
+    <label for="recipe-name">Name:</label>
+    <input type="text" id="recipe-name" name="recipe-name" required>
+    <label for="recipe-ingredients">Ingredients:</label>
+    <input type="text" id="recipe-ingredients" name="recipe-ingredients" required>
+    <p>Please separate with commas like so: eggs, bacon, avocado.</p>
+    <label for="recipe-instructions">Instructions:</label>
+    <input type="text" id="recipe-instructions" name="recipe-instructions" required>
+    <p>Please separate with commas like so: cut up the chicken, marinate the chicken, grill the chicken.</p>
+    <label for="recipe-photo">Photo:</label>
+    <input type="file" id="recipe-photo" name="recipe-photo">
+    <button type="submit">Upload</button>
+</form>
+
+<script src="/js/uploadRecipe.js"></script>
