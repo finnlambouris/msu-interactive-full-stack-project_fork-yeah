@@ -8,13 +8,16 @@ const apiRoutes = require('./api');
 const signupRoutes = require('./signupRoutes.js');
 const loginRoutes = require('./loginRoutes.js');
 const logoutRoutes = require('./logoutRoutes.js');
+const recipeRoutes = require('./recipeRoutes.js');
 
 // Define your routes here
 router.use('/api', apiRoutes);
 router.use('/signup', signupRoutes);
 router.use('/login', loginRoutes);
 router.use('/logout', logoutRoutes);
+router.use('/recipe', recipeRoutes);
 
+// / GET route
 router.get('/', async (req, res) => {
     const allRecipes = await Recipe.findAll({
         include: [{ model: User }],
@@ -27,6 +30,7 @@ router.get('/', async (req, res) => {
     });
 });
 
+// /profile GET route
 router.get("/profile", async (req, res) => {  
     if(req.session.logged_in) {
       const userRecipes = await Recipe.findAll({ 
@@ -42,39 +46,6 @@ router.get("/profile", async (req, res) => {
     } else {
       res.redirect('/login');
     }
-});
-
-router.get('/recipe', async (req, res) => {
-    res.render("upload-recipe");
-})
-
-const {upload} = require('../storage/storage.js');
-router.post('/recipe', upload.single('recipePhoto'), async (req, res) => {
-    const newRecipe = await Recipe.create({
-        name: req.body.recipeName,
-        ingredients: req.body.recipeIngredients,
-        instructions: req.body.recipeInstructions,
-        photo: req.file.path,
-        user_id: req.session.user_id
-    });
-    return res.status(200).json(newRecipe);
-});
-
-  // Create a new post 
-    // req.body contains the post data
-    // Save the post to the database
-router.post('/posts', (req, res) => {
-    res.send('Post created successfully');
-});
-
-// Get all posts from the database
-router.get('/posts', (req, res) => {
-    res.send('List of all posts');
-});
-
-// Get a single post by id
-router.get('/posts/:id', (req, res) => {
-    res.send('Post details');
 });
 
     // Update a post by id
