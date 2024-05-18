@@ -1,0 +1,21 @@
+{{> upload-recipe-button}}
+
+<div class="recipes">
+    <a href="/recipe/{{recipe.id}}" class="recipe">
+        <h2>{{recipe.name}}</h2>
+        <img src="{{recipe.photo}}" alt="a photo of {{recipe.name}}">
+        <h3>Ingredients:</h3>
+        <ul>
+            {{#each (makeList recipe.ingredients) as |ingredient| }}
+            <li>{{ingredient}}</li>
+            {{/each}}
+        </ul>
+        <h3>Instructions</h3>
+        <ol>
+            {{#each (makeList recipe.instructions) as |instruction| }}
+            <li>{{instruction}}</li>
+            {{/each}}
+        </ol>
+        <p>Recipe by {{recipe.user.username}}</p>
+    </a>
+</div>
