@@ -107,6 +107,7 @@ body {
 
 .recipes a,
 .recipes div {
+    border-radius: 1em;
     text-decoration: none;
     color: var(--blk);
     Flex-grow: 1;
