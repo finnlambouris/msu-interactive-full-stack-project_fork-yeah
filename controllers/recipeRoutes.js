@@ -27,10 +27,21 @@ router.get('/:id', async (req, res) => {
       if (req.session.logged_in) {
         return res.render("recipe", {
           recipe: recipe,
+          user_id: req.session.user_id,
         });
       } else {
         return res.redirect("/login");
-      }
+    }
+});
+
+// /recipe/:id DELETE route
+router.delete("/:id", async (req, res) => {
+    try {
+      const deletedRecipe = await Recipe.destroy({ where: { id: req.params.id } });
+      return res.status(200).json(deletedRecipe);
+    } catch (err) {
+      return res.status(400).json(err);
+    }
 });
 
 module.exports = router;
