@@ -42,7 +42,11 @@ router.get("/profile", async (req, res) => {
     } else {
       res.redirect('/login');
     }
-  });
+});
+
+router.get('/recipe', async (req, res) => {
+    res.render("upload-recipe");
+})
 
 const {upload} = require('../storage/storage.js');
 router.post('/recipe', upload.single('recipePhoto'), async (req, res) => {
