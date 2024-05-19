@@ -19,6 +19,7 @@ router.use('/recipe', recipeRoutes);
 
 // / GET route
 router.get('/', async (req, res) => {
+  try {  
     const allRecipes = await Recipe.findAll({
         include: [{ model: User }],
     });
@@ -28,10 +29,15 @@ router.get('/', async (req, res) => {
         logged_in: req.session.logged_in,
         recipes: recipes 
     });
+
+  } catch (err) {
+    return res.status(400).json(err);
+  }
 });
 
 // /profile GET route
 router.get("/profile", async (req, res) => {  
+  try {
     if(req.session.logged_in) {
       const userRecipes = await Recipe.findAll({ 
         where: { user_id: req.session.user_id }, include: [{ model: User }], 
@@ -46,18 +52,10 @@ router.get("/profile", async (req, res) => {
     } else {
       res.redirect('/login');
     }
-});
-
-    // Update a post by id
-    // req.body contains the updated post data
-    // Update the post in the database
-router.put('/posts/:id', (req, res) => {
-    res.send('Post updated successfully');
-});
-
-// Delete a post by id
-router.delete('/posts/:id', (req, res) => {
-    res.send('Post deleted successfully');
+    
+  } catch (err) {
+    return res.status(400).json(err);
+  }
 });
 
 module.exports = router;

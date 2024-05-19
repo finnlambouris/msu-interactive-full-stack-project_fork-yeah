@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
             return res.render("login");
         }
 
-    } catch {
+    } catch (err) {
         return res.status(400).json(err);
     }
 });
@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
-            return res.status(200).json( {message: "User successfully logged in"} );
+            return res.redirect('./profile');
         });
 
     } catch (err) {

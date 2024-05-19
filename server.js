@@ -27,9 +27,9 @@ const { storage } = require('./storage/storage');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 app.use(session({
-    secret: process.env.SECRET,
+    secret: process.env.SESSION_SECRET,
     cookie: {
-        maxAge: 300000,
+        maxAge: 24 * 60,
         httpOnly: true,
         secure: false,
         sameSite: 'strict',
