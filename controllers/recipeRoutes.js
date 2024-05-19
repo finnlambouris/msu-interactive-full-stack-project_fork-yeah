@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { User, Recipe } = require('../models/index.js');
 const {upload} = require('../storage/storage.js');
-const {withAuth} = require('../utils/routeMiddlewares.js');
-router.use(withAuth);
 
 // /recipe GET route
 router.get('/', async (req, res) => {
@@ -32,20 +30,20 @@ router.post('/', upload.single('recipePhoto'), async (req, res) => {
 });
 
 // /recipe/:id GET route
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id, { include: {model: User} });
     const recipe = recipeData.get({ plain: true });
   
-    // if (req.session.logged_in) {
+    if (req.session.logged_in) {
       return res.render("recipe", {
         logged_in: req.session.logged_in,
         user_id: req.session.user_id,
         recipe: recipe,
       });
-    // } else {
-    //   return res.redirect("/login");
-    // }
+    } else {
+      return res.redirect("/login");
+    }
 
   } catch (err) {
     return res.status(400).json(err);
