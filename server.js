@@ -29,10 +29,10 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 app.use(session({
     secret: process.env.SESSION_SECRET,
     cookie: {
-        maxAge: 24 * 60,
+        maxAge: 24 * 60 * 60 * 1000,
         httpOnly: true,
-        secure: false,
-        sameSite: 'strict',
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'Lax',
     },
     resave: false,
     saveUninitialized: true,
