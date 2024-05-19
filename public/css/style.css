@@ -39,7 +39,7 @@
   font-style: normal;
 }
 
-/* document */
+/* header */
 header {
   background-color: var(--lt-gr);
   position: absolute;
@@ -47,6 +47,10 @@ header {
   left: 0px;
   width: 100vw;
   height: 150px;
+}
+
+header a {
+  text-decoration: none;
 }
 
 h1 {
