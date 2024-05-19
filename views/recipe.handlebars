@@ -1,26 +1,26 @@
 <div class="recipes">
-    <div class="recipe">
-        <h2>{{recipe.name}}</h2>
-        <img src="{{recipe.photo}}" alt="a photo of {{recipe.name}}">
-        <h3>Ingredients:</h3>
-        <ul>
-            {{#each (makeList recipe.ingredients) as |ingredient| }}
-            <li>{{ingredient}}</li>
-            {{/each}}
-        </ul>
-        <h3>Instructions</h3>
-        <ol>
-            {{#each (makeList recipe.instructions) as |instruction| }}
-            <li>{{instruction}}</li>
-            {{/each}}
-        </ol>
-        <p>Recipe by {{recipe.user.username}}</p>
-    </div>
+  <div class="recipe">
+    <h2>{{recipe.name}}</h2>
+    <img src="{{recipe.photo}}" alt="a photo of {{recipe.name}}">
+    <h3>Ingredients:</h3>
+    <ul>
+      {{#each (makeList recipe.ingredients) as |ingredient|}}
+        <li>{{ingredient}}</li>
+      {{/each}}
+    </ul>
+    <h3>Instructions</h3>
+    <ol>
+      {{#each (makeList recipe.instructions) as |instruction|}}
+        <li>{{instruction}}</li>
+      {{/each}}
+    </ol>
+    <p>Recipe by {{recipe.user.username}}</p>
+  </div>
 </div>
 
-{{!-- if the user created this recipe, they can delete it --}}
+{{! if the user created this recipe, they can delete it }}
 {{#if (equals user_id recipe.user.id)}}
-    <p id="recipe-id" class="hidden">{{recipe.id}}</p>
-    <a id="delete-recipe-button" href="/recipe/{{recipe.id}}/delete"><button>Delete recipe</button></a>
-    <script src="/js/deleteRecipe.js"></script>
+  <p id="recipe-id" class="hidden">{{recipe.id}}</p>
+  <a id="delete-recipe-button" href="/recipe/{{recipe.id}}/delete"><button>Delete recipe</button></a>
+  <script src="/js/deleteRecipe.js"></script>
 {{/if}}

@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Recipe extends Model {}
 
@@ -30,7 +30,7 @@ Recipe.init(
         model: "users",
         key: "id",
       },
-    }
+    },
   },
   {
     sequelize: sequelize,
@@ -38,7 +38,7 @@ Recipe.init(
     underscored: true,
     createdAt: false,
     updatedAt: false,
-    modelName: 'recipes',
+    modelName: "recipes",
   }
 );
 
