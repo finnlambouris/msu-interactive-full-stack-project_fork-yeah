@@ -38,18 +38,18 @@ WHEN I click on the logout option in the navigation<br>
 THEN I am signed out of the site
 
 ## Credits
-This web application was designed by:
-Finn Lambouris - [finntendoverse](https://github.com/finntendoverse)
-Shawn Carlson - [OxMagnus](https://github.com/OxMagnus)
-Peyton Brimmer - [PeytonBrimmer](https://github.com/PeytonBrimmer)
+This web application was designed by:<br>
+Finn Lambouris - [finntendoverse](https://github.com/finntendoverse)<br>
+Shawn Carlson - [OxMagnus](https://github.com/OxMagnus)<br>
+Peyton Brimmer - [PeytonBrimmer](https://github.com/PeytonBrimmer)<br>
 Taaj Logan - [TaajL](https://github.com/TaajL)
 
 ## Contributing
-Fork the repository.
-Create a new branch for your feature or bugfix: git checkout -b my-new-feature.
-Make your changes and commit them: git commit -am 'Adding my new feature'.
-Push your changes to your forked repository: git push origin my-new-feature.
-Create a new pull request from your forked repository to the original repository.
+Fork the repository<br>
+Create a new branch for your feature or bugfix: git checkout -b my-new-feature<br>
+Make your changes and commit them: git commit -am 'Adding my new feature'<br>
+Push your changes to your forked repository: git push origin my-new-feature<br>
+Create a new pull request from your forked repository to the original repository
 
 ## License
 This project is released under the MIT License. See the LICENSE file for details.
