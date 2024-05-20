@@ -20,7 +20,6 @@ router.use("/recipe", recipeRoutes);
 // / GET route
 router.get("/", async (req, res) => {
   try {
-    console.log(`NODE_ENV environment variable: ${process.env.NODE_ENV}`);
     const allRecipes = await Recipe.findAll({
       include: [{ model: User }],
     });
