@@ -1,11 +1,9 @@
 /* root variables */
 :root {
-  --lt-gr: #41d855;
-  --drk-gr: #319b68;
-  --lt-or: #ff7f29;
-  --drk-or: #e35204;
-  --wht: #ffffff;
-  --blk: #000000;
+  --primary: #801717;
+  --secondary: #000080;
+  --white: #ffffff;
+  --grey: #C0C0C0;
 }
 
 /* fonts */
@@ -41,7 +39,7 @@
 
 /* header */
 header {
-  background-color: var(--lt-gr);
+  background-color: var(--primary);
   position: absolute;
   top: 0px;
   left: 0px;
@@ -62,20 +60,16 @@ h1 {
   display: inline;
   cursor: pointer;
   text-decoration: none;
-  color: var(--lt-or);
-  border: 0.125em solid var(--lt-or);
+  color: var(--secondary);
+  border: 0.125em solid var(--secondary);
+  box-shadow:
+    0 0 0.5em 0 var(--secondary);
   padding: 0.2em 0.5em;
   border-radius: 0.25em;
-  text-shadow:
-    0 0 0.125em hsla(0, 0%, 0%, 0.853),
-    0 0 0.5em currentColor;
-  box-shadow:
-    inset 0 0 0.5em 0 var(--lt-or),
-    0 0 0.5em 0 var(--lt-or);
   position: relative;
   top: 50px;
   left: 20px;
-  transition: color 100ms linear;
+  background-color: var(--white);
 }
 
 nav {
@@ -91,18 +85,30 @@ nav a {
   font-family: "Space Mono", monospace;
   font-weight: 700;
   font-style: normal;
-  color: var(--lt-or);
+  color: var(--white);
   font-size: 2rem;
-  margin: 30px;
+  margin: 10px;
+  padding: 0.2em 0.5em;
+  border: 0.125em solid var(--primary);
+}
+
+nav a:hover {
+  color: var(--secondary);
+  background-color: var(--white);
+  border: 0.125em solid var(--secondary);
+  border-radius: 0.25em;
+  box-shadow:
+    0 0 0.5em 0 var(--secondary);
+  cursor: pointer;
 }
 
 body {
-  margin-top: 200px;
+  margin-top: 150px;
   font-family: "Space Mono", monospace;
   font-weight: 400;
   font-style: normal;
   text-decoration: none;
-  background-color: var(--blk);
+  background-color: var(--primary);
 }
 
 /* recipes */
@@ -117,13 +123,16 @@ body {
 .recipes div {
   border-radius: 1em;
   text-decoration: none;
-  color: var(--blk);
+  color: var(--secondary);
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 30%;
-  margin: 1rem;
+  margin: 1.25rem;
   padding: 2rem;
-  background-color: var(--drk-gr);
+  background-color: var(--grey);
+  border: 0.125em solid var(--secondary);
+  box-shadow:
+    0 0 0.5em 0 var(--secondary);
 }
 
 .recipe h2 {
@@ -150,8 +159,10 @@ body {
   margin: 1rem;
   padding: 2rem;
   border-radius: 5px;
-  background-color: var(--wht);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--grey);
+  border: 0.125em solid var(--secondary);
+  box-shadow:
+    0 0 0.5em 0 var(--secondary);
 }
 
 .form h2,
@@ -165,20 +176,20 @@ body {
 
 .form h2 {
   font-size: 1.5rem;
-  color: var(--drk-gr);
+  color: var(--secondary);
   text-align: center;
   margin-bottom: 2rem;
 }
 
 .form label {
   font-weight: bold;
-  color: var(--drk-gr);
+  color: var(--secondary);
 }
 
 .form input[type="text"],
 .form input[type="password"] {
   padding: 0.7rem;
-  border: 1px solid var(--lt-gr);
+  border: 1px solid var(--secondary);
   border-radius: 3px;
   font-size: 1rem;
   box-sizing: border-box;
@@ -192,22 +203,21 @@ body {
 .form p {
   font-size: 0.8rem;
   font-style: italic;
-  color: var(--dk-gr);
+  color: var(--secondary);
   margin-top: 0;
 }
 
 .form button {
   padding: 1rem;
-  background-color: var(--lt-gr);
-  color: var(--wht);
+  background-color: var(--secondary);
+  color: var(--white);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
 }
 
 .form button:hover {
-  background-color: var(--drk-gr);
+  background-color: var(--primary);
 }
 
 /* upload recipe button */
@@ -216,22 +226,17 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 3rem;
-  color: var(--lt-or);
-  background-color: var(--lt-gr);
-  border: 0.125em solid var(--lt-or);
+  color: var(--secondary);
+  background-color: var(--white);
+  border: 0.125em solid var(--secondary);
   padding: 0.2em 0.5em;
   border-radius: 0.25em;
-  text-shadow:
-    0 0 0.125em hsla(0, 0%, 0%, 0.853),
-    0 0 0.5em currentColor;
   box-shadow:
-    inset 0 0 0.5em 0 var(--lt-or),
-    0 0 0.5em 0 var(--lt-or);
+    0 0 0.5em 0 var(--secondary);
   cursor: pointer;
   position: fixed;
   bottom: 20px;
   right: 30px;
-  transition: color 100ms linear;
 }
 
 /* delete recipe button */
@@ -247,22 +252,21 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 3rem;
-  color: var(--lt-or);
-  background-color: var(--lt-gr);
-  border: 0.125em solid var(--lt-or);
+  color: var(--secondary);
+  background-color: var(--white);
+  border: 0.125em solid var(--secondary);
   padding: 0.2em 0.5em;
   border-radius: 0.25em;
-  text-shadow:
-    0 0 0.125em hsla(0, 0%, 0%, 0.853),
-    0 0 0.5em currentColor;
   box-shadow:
-    inset 0 0 0.5em 0 var(--lt-or),
-    0 0 0.5em 0 var(--lt-or);
+    0 0 0.5em 0 var(--secondary);
   cursor: pointer;
-  transition: color 100ms linear;
   margin: 0 auto;
   margin-bottom: 50px;
   width: 95%;
+}
+
+footer {
+  height: 70px;
 }
 
 .hidden {
@@ -274,6 +278,7 @@ body {
   header {
     height: 315px;
   }
+
   h1 {
     margin: 0 auto;
     display: block;
@@ -281,20 +286,35 @@ body {
     width: 80%;
     left: 0;
   }
+
   nav {
     flex-direction: column;
     text-align: center;
     margin-top: 60px;
   }
+
   nav a {
-    margin: 0px;
-    padding: 10px;
-    border-bottom: 5px solid var(--lt-or);
+    margin: 5px;
+    padding: 5px;
   }
+
   body {
-    margin-top: 350px;
+    margin-top: 325px;
   }
+
   .recipes {
     flex-direction: column;
+    align-content: center;
+  }
+
+  .recipe {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    width: 80%;
+    height: 100%;
+    border-radius: 1em;
+    margin: 0 auto;
+    align-items: stretch;
   }
 }
