@@ -1,3 +1,4 @@
+{{#if recipes}}
 <div class="recipes">
     {{#each recipes as |recipe|}}
         <a href="/recipe/{{id}}" class="recipe">
@@ -19,3 +20,7 @@
         </a>
     {{/each}}
 </div>
+
+{{else}}
+<p class="profile">What? No recipes yet??? Be sure to add one soon!</p>
+{{/if}}
