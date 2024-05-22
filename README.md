@@ -7,7 +7,7 @@
 Fork Yeah – Fork Yeah is a dynamic platform where you can share, discover, and explore a vast array of recipes. Fork Yeah allows users to post their favorite recipes, complete with photos, ingredients, and detailed instructions.
 
 ## Deployed Application
-![Deployed Application Photo](./public/img/deployed-application.png)
+![Deployed Application Photo](./public/img/deployed-application-revision.png)
 [Deployed Application](https://msu-fork-yeah-d9a4d1d2afa6.herokuapp.com/)
 
 ## Installation
