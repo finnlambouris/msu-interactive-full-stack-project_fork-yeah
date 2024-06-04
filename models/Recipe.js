@@ -1,7 +1,12 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Recipe extends Model {}
+class Recipe extends Model {
+  // Instance method to check ownership
+  isCreatedBy(userId) {
+    return this.user_id === userId;
+  }
+}
 
 Recipe.init(
   {

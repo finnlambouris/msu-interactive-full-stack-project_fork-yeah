@@ -40,6 +40,7 @@ router.get("/:id", async (req, res) => {
         logged_in: req.session.logged_in,
         user_id: req.session.user_id,
         recipe: recipe,
+        isCreatedBy: recipeData.isCreatedBy(req.session.user_id),
       });
     } else {
       return res.redirect("/login");

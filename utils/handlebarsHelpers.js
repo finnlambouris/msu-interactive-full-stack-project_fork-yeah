@@ -9,13 +9,4 @@ module.exports = {
     array.push(...ingredientsOrInstructions.split(", "));
     return array;
   },
-
-  // this function checks if 2 user ids are the same
-  equals: (id1, id2) => {
-    if (id1 === id2) {
-      return true;
-    } else {
-      return false;
-    }
-  },
 };

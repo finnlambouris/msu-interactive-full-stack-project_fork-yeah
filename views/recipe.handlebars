@@ -19,7 +19,7 @@
 </div>
 
 {{! if the user created this recipe, they can delete it }}
-{{#if (equals user_id recipe.user.id)}}
+{{#if isCreatedBy }}
   <p id="recipe-id" class="hidden">{{recipe.id}}</p>
   <a id="delete-recipe-button" href="/recipe/{{recipe.id}}/delete"><button>Delete recipe</button></a>
   <script src="/js/deleteRecipe.js"></script>
