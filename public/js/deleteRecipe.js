@@ -5,7 +5,7 @@ async function deleteRecipe(event) {
   console.log(recipeId);
 
   if (recipeId) {
-    const response = await fetch(`/recipe/${recipeId}`, {
+    const response = await fetch(`/api/recipes/${recipeId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

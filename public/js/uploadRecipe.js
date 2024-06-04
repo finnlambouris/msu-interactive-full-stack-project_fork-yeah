@@ -12,7 +12,7 @@ async function upload(event) {
   formData.append("recipeIngredients", recipeIngredients);
   formData.append("recipeInstructions", recipeInstructions);
 
-  const response = await fetch(`/recipe`, {
+  const response = await fetch(`/api/recipes`, {
     method: "POST",
     body: formData,
   });

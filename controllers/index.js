@@ -4,17 +4,10 @@ const router = express.Router();
 const { User, Recipe } = require("../models/index.js");
 
 const apiRoutes = require("./api");
-
-const signupRoutes = require("./signupRoutes.js");
-const loginRoutes = require("./loginRoutes.js");
-const logoutRoutes = require("./logoutRoutes.js");
 const recipeRoutes = require("./recipeRoutes.js");
 
 // Define your routes here
 router.use("/api", apiRoutes);
-router.use("/signup", signupRoutes);
-router.use("/login", loginRoutes);
-router.use("/logout", logoutRoutes);
 router.use("/recipe", recipeRoutes);
 
 // / GET route
@@ -29,6 +22,22 @@ router.get("/", async (req, res) => {
       logged_in: req.session.logged_in,
       recipes: recipes,
     });
+  } catch (err) {
+    return res.status(400).json(err);
+  }
+});
+
+// /login GET route
+router.get("/login", (req, res) => {
+  try {
+    // if the user is already logged in, then they will be redirected to the homepage
+    if (req.session.logged_in) {
+      res.redirect("/");
+    }
+    // if the user is not already logged in, then the login.handlebars file will be rendered
+    else {
+      return res.render("login");
+    }
   } catch (err) {
     return res.status(400).json(err);
   }
