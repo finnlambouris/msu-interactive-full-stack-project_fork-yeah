@@ -44,7 +44,7 @@ Recipe.init(
     createdAt: false,
     updatedAt: false,
     modelName: "recipes",
-  }
+  },
 );
 
 module.exports = Recipe;

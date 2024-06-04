@@ -6,7 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "seed": "node seeds/seed.js",
+    "lint-check": "eslint --ignore-pattern '**/._*' --no-warn-ignored",
+    "prettier-check": "prettier . --check",
+    "check": "npm run prettier-check && npm run lint-check",
+    "lint-fix": "eslint --fix --ignore-pattern '**/._*' --no-warn-ignored",
+    "prettier-fix": "prettier . --write",
+    "fix": "npm run prettier-fix && npm run lint-fix"
   },
   "keywords": [],
   "author": "",

@@ -1,29 +1,34 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fork Yeah!!!!</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron:wght@400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron:wght@400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
     <header>
-        <a href="/"><h1>Fork Yeah!!!!</h1></a>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/profile">Profile</a>
-            {{#if logged_in}}
-            <a href="/api/users/logout">Log out</a>
-            {{else}}
-            <a href="/login">Log in</a>
-            {{/if}}
-        </nav>
+      <a href="/"><h1>Fork Yeah!!!!</h1></a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/profile">Profile</a>
+        {{#if logged_in}}
+          <a href="/api/users/logout">Log out</a>
+        {{else}}
+          <a href="/login">Log in</a>
+        {{/if}}
+      </nav>
     </header>
-    {{{ body }}}
+    {{{body}}}
     <footer></footer>
-</body>
+  </body>
 </html>

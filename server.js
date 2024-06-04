@@ -37,7 +37,7 @@ app.use(
     store: new SequelizeStore({
       db: sequelize,
     }),
-  })
+  }),
 );
 
 // Use routes
@@ -46,6 +46,6 @@ app.use(routes);
 
 sequelize.sync().then(() => {
   app.listen(PORT, () =>
-    console.log(`App listening at http://localhost:${PORT}!`)
+    console.log(`App listening at http://localhost:${PORT}!`),
   );
 });

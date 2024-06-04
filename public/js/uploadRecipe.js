@@ -3,7 +3,9 @@ async function upload(event) {
 
   const recipeName = document.querySelector("#recipe-name").value;
   const recipeIngredients = document.querySelector("#recipe-ingredients").value;
-  const recipeInstructions = document.querySelector("#recipe-instructions").value;
+  const recipeInstructions = document.querySelector(
+    "#recipe-instructions",
+  ).value;
   const recipePhoto = document.querySelector("#recipe-photo");
 
   const formData = new FormData();

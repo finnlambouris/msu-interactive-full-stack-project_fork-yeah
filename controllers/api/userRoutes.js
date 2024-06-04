@@ -22,7 +22,7 @@ router.post("/login", async (req, res) => {
     // if the password entered by the user doesn't match what exists in the database, the login will fail
     const validPassword = await bcrypt.compare(
       req.body.password,
-      userData.password
+      userData.password,
     );
     if (!validPassword) {
       return res.status(404).json({ message: "Login failed" });

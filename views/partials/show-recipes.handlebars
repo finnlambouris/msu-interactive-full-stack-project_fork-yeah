@@ -1,26 +1,26 @@
 {{#if recipes}}
-<div class="recipes">
+  <div class="recipes">
     {{#each recipes as |recipe|}}
-        <a href="/recipe/{{id}}" class="recipe">
-            <h2>{{name}}</h2>
-            <img src="{{photo}}" alt="a photo of {{name}}">
-            <h3>Ingredients:</h3>
-            <ul>
-                {{#each (makeList ingredients) as |ingredient| }}
-                <li>{{ingredient}}</li>
-                {{/each}}
-            </ul>
-            <h3>Instructions</h3>
-            <ol>
-                {{#each (makeList instructions) as |instruction| }}
-                <li>{{instruction}}</li>
-                {{/each}}
-            </ol>
-            <p>Recipe by {{user.username}}</p>
-        </a>
+      <a href="/recipe/{{id}}" class="recipe">
+        <h2>{{name}}</h2>
+        <img src="{{photo}}" alt="a photo of {{name}}" />
+        <h3>Ingredients:</h3>
+        <ul>
+          {{#each (makeList ingredients) as |ingredient|}}
+            <li>{{ingredient}}</li>
+          {{/each}}
+        </ul>
+        <h3>Instructions</h3>
+        <ol>
+          {{#each (makeList instructions) as |instruction|}}
+            <li>{{instruction}}</li>
+          {{/each}}
+        </ol>
+        <p>Recipe by {{user.username}}</p>
+      </a>
     {{/each}}
-</div>
+  </div>
 
 {{else}}
-<p class="profile">What? No recipes yet??? Be sure to add one soon!</p>
+  <p class="profile">What? No recipes yet??? Be sure to add one soon!</p>
 {{/if}}

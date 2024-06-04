@@ -40,7 +40,7 @@ User.init(
         return user;
       },
     },
-  }
+  },
 );
 
 module.exports = User;

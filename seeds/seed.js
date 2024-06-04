@@ -26,7 +26,7 @@ const seedDatabase = async () => {
     {
       individualHooks: true,
       returning: true,
-    }
+    },
   );
 
   await Recipe.bulkCreate(
@@ -74,7 +74,7 @@ const seedDatabase = async () => {
     {
       individualHooks: true,
       returning: true,
-    }
+    },
   );
 };
 

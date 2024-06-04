@@ -1,7 +1,7 @@
 <div class="recipes">
   <div class="recipe">
     <h2>{{recipe.name}}</h2>
-    <img src="{{recipe.photo}}" alt="a photo of {{recipe.name}}">
+    <img src="{{recipe.photo}}" alt="a photo of {{recipe.name}}" />
     <h3>Ingredients:</h3>
     <ul>
       {{#each (makeList recipe.ingredients) as |ingredient|}}
@@ -19,8 +19,9 @@
 </div>
 
 {{! if the user created this recipe, they can delete it }}
-{{#if isCreatedBy }}
+{{#if isCreatedBy}}
   <p id="recipe-id" class="hidden">{{recipe.id}}</p>
-  <a id="delete-recipe-button" href="/recipe/{{recipe.id}}/delete"><button>Delete recipe</button></a>
+  <a id="delete-recipe-button" href="/recipe/{{recipe.id}}/delete"><button
+    >Delete recipe</button></a>
   <script src="/js/deleteRecipe.js"></script>
 {{/if}}

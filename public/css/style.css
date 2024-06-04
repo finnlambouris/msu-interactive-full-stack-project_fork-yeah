@@ -3,7 +3,7 @@
   --primary: #801717;
   --secondary: #000080;
   --white: #ffffff;
-  --grey: #C0C0C0;
+  --grey: #c0c0c0;
 }
 
 /* fonts */
@@ -62,8 +62,7 @@ h1 {
   text-decoration: none;
   color: var(--secondary);
   border: 0.125em solid var(--secondary);
-  box-shadow:
-    0 0 0.5em 0 var(--secondary);
+  box-shadow: 0 0 0.5em 0 var(--secondary);
   padding: 0.2em 0.5em;
   border-radius: 0.25em;
   position: relative;
@@ -97,8 +96,7 @@ nav a:hover {
   background-color: var(--white);
   border: 0.125em solid var(--secondary);
   border-radius: 0.25em;
-  box-shadow:
-    0 0 0.5em 0 var(--secondary);
+  box-shadow: 0 0 0.5em 0 var(--secondary);
   cursor: pointer;
 }
 
@@ -148,8 +146,7 @@ p.profile {
   padding: 2rem;
   background-color: var(--grey);
   border: 0.125em solid var(--secondary);
-  box-shadow:
-    0 0 0.5em 0 var(--secondary);
+  box-shadow: 0 0 0.5em 0 var(--secondary);
 }
 
 .recipe h2 {
@@ -185,8 +182,7 @@ p.profile {
   border-radius: 5px;
   background-color: var(--grey);
   border: 0.125em solid var(--secondary);
-  box-shadow:
-    0 0 0.5em 0 var(--secondary);
+  box-shadow: 0 0 0.5em 0 var(--secondary);
 }
 
 .form h2,
@@ -255,8 +251,7 @@ p.profile {
   border: 0.125em solid var(--secondary);
   padding: 0.2em 0.5em;
   border-radius: 0.25em;
-  box-shadow:
-    0 0 0.5em 0 var(--secondary);
+  box-shadow: 0 0 0.5em 0 var(--secondary);
   cursor: pointer;
   position: fixed;
   bottom: 20px;
@@ -281,8 +276,7 @@ p.profile {
   border: 0.125em solid var(--secondary);
   padding: 0.2em 0.5em;
   border-radius: 0.25em;
-  box-shadow:
-    0 0 0.5em 0 var(--secondary);
+  box-shadow: 0 0 0.5em 0 var(--secondary);
   cursor: pointer;
   margin: 0 auto;
   margin-bottom: 50px;
